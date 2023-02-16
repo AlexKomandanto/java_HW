@@ -59,6 +59,12 @@ public class LibraryMetods {
 
     }
 
+    // форматирование вывода в консоль
+    static boolean printResult(String a, String b){
+        System.out.println(String.format(
+                "(%s, %s) isomorph -> %s", a, b, printResult(a, b) ? "true" : "false"));
+        return false;
+    }
 
     // функция StringBuilder
     private static String buildTask(String  str){
