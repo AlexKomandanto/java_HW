@@ -18,12 +18,16 @@ Output: true
  */
 public class Task02 {
     public static void main(String[] args) {
-        String a = "paper";
-        String b = "title";
+//        String a = "paper";
+//        String b = "title";
 //        isIsomorph(a, b);
 //        System.out.printf(" %s = %s ", a, b);
 //        System.out.println("Isomorph -> " + isIsomorph(a, b));
-        printResult(a, b);
+        printResult("paper", "title");
+        printResult("feel", "turtle");
+        printResult("foo", "bar");
+        printResult("note", "code");
+        printResult("add", "off");
     }
     public static boolean isIsomorph (String a, String b){
         HashMap<Character, Character> isomorph = new HashMap<Character, Character>();
@@ -31,9 +35,12 @@ public class Task02 {
         if(a.length() != b.length())return false;
 
         for(int i = 0; i < a.length(); i++){
-            isomorph.put(a.charAt(i), b.charAt(i));
             if(isomorph.containsKey(a.charAt(i))){
-                if(!isomorph.get(a.charAt(i)).equals(b.charAt(i)))return false;
+                if(isomorph.get(a.charAt(i)) != b.charAt(i)){
+                    return false;
+                }
+            } else{
+                isomorph.put(a.charAt(i), b.charAt(i));
             }
         }
         return true;
