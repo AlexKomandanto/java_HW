@@ -9,6 +9,25 @@ import java.util.LinkedList;
 import java.util.Random;
 import java.util.Scanner;
 
+/*
+Функции, где лучше применять!
+Линейные:
+Все вещи выстроены в одну линию
+
+List: ArrayList, LinkedList
+int[]
+
+Stack — LIFO ( )
+Queue — FIFO
+
+Ассоциативные:
+Map: TreeMap, HashMap, LinkedHashMap
+
+Множества:
+В одну линию, но в беспорядке
+Set: TreeSet, HashSet, LinkedHashSet
+
+ */
 public class LibraryMetods {
 
 
