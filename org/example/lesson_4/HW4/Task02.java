@@ -10,29 +10,43 @@ import java.util.LinkedList;
  */
 public class Task02 {
     public static void main(String[] args) {
+        LinkedQueue();
+        enqueue("svf");
+        enqueue("hive");
+        enqueue("kqa");
+        System.out.println(list);
+        dequeue();
+        System.out.println(list);
+        enqueue("svf");
+        System.out.println(list);
+        System.out.println(first());
 
     }
-    private LinkedList<Object> list;
 
-    public void LinkedQueue() {
-        list = new LinkedList<Object>();
+    private static LinkedList<String> list;
+
+    public static void LinkedQueue() {
+        list = new LinkedList<String>();
     }
 
-    public void enqueue(Object element) {
+    // помещает элемент в конец очереди List
+    public static void enqueue(String element) {
         list.addLast(element);
     }
 
-    public Object dequeue() {
+    // метод возвращает первый элемент из очереди и удаляет его, если List не пустой
+    public static String dequeue() {
         if (list.isEmpty()) {
             return null;
         }
 
-        Object element = list.getFirst();
+        String element = list.getFirst();
         list.removeFirst();
         return element;
     }
 
-    public Object first() {
+    // метод возвращает первый элемент из очереди, не удаляя
+    public static String first() {
         if (list.isEmpty()) {
             return null;
         }
