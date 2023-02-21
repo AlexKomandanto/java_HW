@@ -9,6 +9,7 @@ import java.util.*;
  */
 public class Task01 {
     public static void main(String[] args) {
+       //createArray(addPerson(), addPhone()), addPhone());
 
     }
 
@@ -37,7 +38,7 @@ public class Task01 {
         return List.of(myArray);
     }
 
-    HashMap<String, List<Integer>> phoneBook = new HashMap<>();
+    public HashMap<String, List<Integer>> phoneBook = new HashMap<>();
     // Add a person to the phone book
     public void addPerson(String name) {
         List<Integer> phones = new ArrayList<>();
