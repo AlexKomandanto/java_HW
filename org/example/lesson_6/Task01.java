@@ -1,4 +1,9 @@
 package lesson_6;
+
+import java.util.HashSet;
+import java.util.Random;
+import java.util.Set;
+
 /*
 1. Напишите метод, который заполнит массив из 1000 элементов случайными числами от 0 до 24.
 1.5. Создайте метод, в который передайте заполненный выше массив,
@@ -9,7 +14,27 @@ package lesson_6;
  */
 public class Task01 {
     public static void main(String[] args) {
-
+        int[] array = fillArray(1000, 25);
+        float percent = calcPercent(array);
+        System.out.println(percent);
     }
 
+    private static int[] fillArray(int capacity, int maxRange) {
+        int[] array = new int[capacity];
+        Random random = new Random();
+        for (int i = 0; i < array.length; i++) {
+            array[i] = random.nextInt(maxRange);
+        }
+        return array;
+    }
+
+    private static float calcPercent(int[] array) {
+        Set<Integer> set = new HashSet<>();
+
+        for (int i = 0; i < array.length; i++) {
+            set.add(array[i]);
+        }
+        int count = set.size();
+        return count * 100.0f / array.length;  // 100.0f float значение
+    }
 }
